@@ -6,5 +6,6 @@
 </head>
 <body>
 	<?php echo "home page"; ?>
+	<h1>Hello from Home!</h1>
 </body>
 </html>
