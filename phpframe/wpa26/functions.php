@@ -7,4 +7,14 @@ function load_view($page) {
 		echo "404 File Not Found, Idiot!";
 	}
 }
+/**
+* to dump value and die when it is true
+*/
+
+function dump($value, $die = false) {
+	var_dump($value);
+	if($die == true) {
+		die();
+	}
+}
  ?>
