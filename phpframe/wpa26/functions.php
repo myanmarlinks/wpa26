@@ -1,10 +1,15 @@
 <?php 
-function load_view($page) {
+function load_view($page, $data = null) {
 	$file = DD . "/app/view/" . $page . ".php";
 	if(file_exists($file)) {
+		ob_start();
+		if($data != null) {
+			extract($data);
+		}
 		require $file;
+		ob_end_flush();
 	} else {
-		echo "404 File Not Found, Idiot!";
+		trigger_error("View ဖိုင္ထည့္ရမယ္ကြ ေခြသား", E_USER_ERROR);
 	}
 }
 /**
