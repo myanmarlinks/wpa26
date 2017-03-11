@@ -1,5 +1,8 @@
 <?php 
 return [
-	'dbname'	=> 'foo'
+	'server_name'	=> 'localhost',
+	'username'		=> 'root',
+	'password'		=> '',
+	'db_name'		=> 'wpa26'
 ];
  ?>
