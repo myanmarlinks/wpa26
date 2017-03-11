@@ -15,8 +15,9 @@ function BlogController() {
 }
 
 function PageController() {
+	_db_delete_id("stocks", 1);
 	$data = [
-		'categories'	=> _db_get_all("categories")
+		'categories'	=> _db_get_select("categories", ['name'])
 	];
 	load_view("tutu", $data);
 }

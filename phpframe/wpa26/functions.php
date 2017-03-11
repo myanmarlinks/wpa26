@@ -49,6 +49,14 @@ function _c($value) {
 	}
 }
 
+function _db_get_select($table_name, $columns) {
+
+}
+
+function _db_delete_id($table_name, $id) {
+
+}
+
 function _db_get_all($table_name) {
 	$servername = _c("database.server_name");
 	$username = _c("database.username");
