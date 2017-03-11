@@ -11,7 +11,6 @@ function BlogController() {
 	$password = "";
 	$dbname = "wpa26";
 
-
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 	if (!$conn) {
