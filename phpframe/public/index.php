@@ -1,6 +1,7 @@
 <?php 
 define("DD", realpath( __DIR__ . "/.."));
 require DD . "/wpa26/functions.php";
+require DD . "/wpa26/dbprovider.php";
 require DD . "/app/controller/controllers.php";
 $request_uri = explode("/", $_SERVER['REQUEST_URI']);
 $script_name = explode("/", $_SERVER['SCRIPT_NAME']);
