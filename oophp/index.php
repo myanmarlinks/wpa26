@@ -1,6 +1,10 @@
 <?php 
 
 abstract class Animal {
+	public $name;
+	public function __construct($name) {
+		$this->name = $name;
+	}
 	public function eat(string ...$thing) {
 		var_dump($thing);
 	}
@@ -25,11 +29,12 @@ trait Foo {
 
 class Dog extends Animal implements DogInterface, EatInterface {
 
-	public $name; 
+	
 	public $color;
 	public $leg;	
 	public function __construct($name, $color, $leg = 4) {
-		$this->name = $name;
+		parent::__construct($name);
+	
 		$this->color = $color;
 		$this->leg = $leg;
 
@@ -49,12 +54,10 @@ class Dog extends Animal implements DogInterface, EatInterface {
 class Cat extends Animal {
 
 	use Foo;
-
-	public $name;
 	
 	public function __construct($name)
 	{
-		$this->name = $name;
+		parent::__construct($name);
 	}
 	
 	public function meow() {
