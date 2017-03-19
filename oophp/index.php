@@ -1,42 +1,58 @@
 <?php 
 
-class Dog {
-	// properties
-	public $name; 
-	public $color;
-
-	// methods
-	public function bark() {
-		echo "BARK! <br />";
+abstract class Animal {
+	public function eat(string ...$thing) {
+		var_dump($thing);
 	}
-	public function eat() {
-		echo "EAT! <br />";
-	}
-
-	public function __construct() {
-		echo "CLASS Construct! <br />";
-	}
-
-	public function __destruct() {
-		echo "CLASS Destroy! <br />";
+	public function sleep() {
+		echo "Sleep <br />";
 	}
 }
 
-$dog = new Dog;
-$dog->name = "Aung Net"; 
-echo $dog->name . "<br />";
+class Dog extends Animal {
+	public $name; 
+	public $color;
+	public $leg;	
+	public function __construct($name, $color, $leg = 4) {
+		$this->name = $name;
+		$this->color = $color;
+		$this->leg = $leg;
+
+		echo "CLASS Construct! <br />";
+	}
+	// Scalar Type Declaration (...$thing)
+	// Return Type Declaration :String
+	
+	public function bark() {
+		echo "BARK! <br />";
+	}
+	public function __destruct() {
+		echo "DOG CLASS DESTROY! <br />";
+	}
+}
+
+class Cat extends Animal {
+	public $name;
+	
+	public function __construct($name)
+	{
+		$this->name = $name;
+	}
+	
+	public function meow() {
+		echo "Meow! <br />";
+	}
+
+	public function __destruct() {
+		echo "CAT CLASS DESTROY! <br />";
+	}
+}
+
+$dog = new Dog("Aung Net", "red", 3);
+$dog->sleep();
 $dog->bark();
-
-
-$dogOne = new Dog;
-$dogOne->name = "Bo Bo";
-echo $dogOne->name . "<br />";
-$dogOne->bark();
-
-
-$dogTwo = new Dog;
-$dogTwo->name = "Bo Bo";
-echo $dogTwo->name . "<br />";
-$dogTwo->bark();
+$dog->eat("Meat", "Rice", "Chicken", 5, "Fish", 45);
+$cat = new Cat("Mee Mee");
+$cat->sleep();
 
 ?>
