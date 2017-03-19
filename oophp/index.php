@@ -9,7 +9,14 @@ abstract class Animal {
 	}
 }
 
-class Dog extends Animal {
+interface DogInterface {
+	public function bark();
+}
+interface EatInterface {
+	public function eat();
+}
+
+class Dog extends Animal implements DogInterface, EatInterface {
 	public $name; 
 	public $color;
 	public $leg;	
@@ -50,7 +57,6 @@ class Cat extends Animal {
 
 $dog = new Dog("Aung Net", "red", 3);
 $dog->sleep();
-$dog->bark();
 $dog->eat("Meat", "Rice", "Chicken", 5, "Fish", 45);
 $cat = new Cat("Mee Mee");
 $cat->sleep();
