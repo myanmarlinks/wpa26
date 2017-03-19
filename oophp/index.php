@@ -16,7 +16,15 @@ interface EatInterface {
 	public function eat();
 }
 
+trait Foo {
+	public $bar = "Google"; 
+	public function test() {
+		echo "Test <br />";
+	}
+}
+
 class Dog extends Animal implements DogInterface, EatInterface {
+
 	public $name; 
 	public $color;
 	public $leg;	
@@ -39,6 +47,9 @@ class Dog extends Animal implements DogInterface, EatInterface {
 }
 
 class Cat extends Animal {
+
+	use Foo;
+
 	public $name;
 	
 	public function __construct($name)
@@ -60,5 +71,7 @@ $dog->sleep();
 $dog->eat("Meat", "Rice", "Chicken", 5, "Fish", 45);
 $cat = new Cat("Mee Mee");
 $cat->sleep();
+$cat->test();
+echo $cat->bar;
 
 ?>
