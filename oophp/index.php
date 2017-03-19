@@ -2,6 +2,7 @@
 
 abstract class Animal {
 	public $name;
+	public $num1;
 	public function __construct($name) {
 		$this->name = $name;
 	}
@@ -10,6 +11,10 @@ abstract class Animal {
 	}
 	public function sleep() {
 		echo "Sleep <br />";
+	}
+
+	public function overload($num1) {
+		$this->num1 = $num1;
 	}
 }
 interface DogInterface {
