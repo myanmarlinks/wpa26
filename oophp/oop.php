@@ -30,23 +30,31 @@ abstract class Animal {
 interface DogInterface {
 	public function dance();
 }
+// Trait Design Pattern
+trait DogTrait {
+	public $foo;
+	public function bar() {
+		$this->foo = "Hello Fool! <br />";
+		echo "BAR! <br />";
+	}
+}
 
 class Dog extends Animal implements DogInterface {
-	
+	use DogTrait;
 	public function __construct(string $name) {
 		parent::__construct($name);
 	}
-
 	public function dance() {
-		echo "DANCE!";
+		echo "DANCE! <br />";
 	}
-
 	public function bark() {
-		echo "WOOF!";
+		echo "WOOF! <br />";
 	}
 }
 $dog = new Dog("Aung Net");
 $dog->eat("Shoe", "Meat");
 $dog->bark();
+$dog->bar();
+echo $dog->foo;
 
  ?>
