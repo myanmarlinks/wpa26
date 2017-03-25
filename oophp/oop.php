@@ -57,4 +57,28 @@ $dog->bark();
 $dog->bar();
 echo $dog->foo;
 
+/*
+Cat Object 
+extends Animal
+create interface for CatInterface with sleep
+create a CatTrait with google function
+use CatTrait
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  ?>
