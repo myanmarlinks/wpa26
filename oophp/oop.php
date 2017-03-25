@@ -4,7 +4,13 @@ abstract class - need to extend!
 */
 abstract class Animal {
 	public $name;
-	function __construct(string $name)
+
+
+	/**
+	 * Class Constructor
+	 * @param    $name   
+	 */
+	public function __construct($name)
 	{
 		$this->name = $name;
 	}
@@ -19,17 +25,26 @@ abstract class Animal {
 }
 // $animal = new Animal("Aung Net");
 // $animal->eat("Shoe", "Rice", "Meat");
-class Dog extends Animal {
-	function __construct(string $name)
-	{
+
+// Contract
+interface DogInterface {
+	public function dance();
+}
+
+class Dog extends Animal implements DogInterface {
+	
+	public function __construct(string $name) {
 		parent::__construct($name);
+	}
+
+	public function dance() {
+		echo "DANCE!";
 	}
 
 	public function bark() {
 		echo "WOOF!";
 	}
 }
-
 $dog = new Dog("Aung Net");
 $dog->eat("Shoe", "Meat");
 $dog->bark();
