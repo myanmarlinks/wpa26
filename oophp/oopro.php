@@ -48,4 +48,32 @@ Goo::moo();
 // late loading
 Goo::roo("Test", "Another");
 
+$arr = [
+	[
+		'id'	=> 1,
+		'name'	=> "Aung Aung",
+	],
+	[
+		'id'	=> 2,
+		'name'	=> "Baung Naung",
+	]
+];
+$je_arr = json_encode($arr);
+echo $je_arr;
+echo "<br />";
+var_dump(json_decode($je_arr));
+$se_arr = serialize($arr);
+echo $se_arr . "<br />";
+var_dump(unserialize($se_arr));
+
+
+
+
+
+
+
+
+
+
+
  ?>
