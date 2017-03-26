@@ -6,7 +6,9 @@ class StaticChain  {
 		echo "StaticChain Construct! <br />"; 
 	}
 	static public function getInstance() {
+		var_dump(self::$_instance);
 		if(!self::$_instance instanceof StaticChain) {
+			echo "StaticChain Object Created! <br />";
 			self::$_instance = new StaticChain();
 		} 
 		return self::$_instance;
@@ -25,5 +27,6 @@ class StaticChain  {
 }
 StaticChain::getInstance()->eat();
 StaticChain::getInstance()->eat()->sleep();
+StaticChain::getInstance()->sleep();
 
 ?>
