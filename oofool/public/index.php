@@ -1,11 +1,17 @@
 <?php 
+$students = DB::table("stocks")->get();
+class DB extends PDO {
 
-$students = DB::table("students")->get();
+	public function __construct() {
+		$dsn = 'mysql:dbname=wpa26;host=127.0.0.1';
+		$user = 'root';
+		$password = '';
+		parent::__construct($dsn, $user, $password);
+	}
 
-class DB {
 	private static $_instance;
 
-	public static function table(string $table_name) {
+	public static function table(  $table_name) {
 		if(!self::$_instance instanceof DB) {
 			self::$_instance = new DB();
 		}
@@ -15,7 +21,6 @@ class DB {
 	public function get() {
 		echo "STUDENTS";
 	}
-
 }
 
 
