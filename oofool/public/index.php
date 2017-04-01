@@ -1,7 +1,7 @@
 <?php 
 
 define("DD", realpath( __DIR__ . "/.."));
-require DD . "/wpa26/provider/DB.php";
+require DD . "/vendor/autoload.php";
 
 $stocks = DB::table("stocks")->get();
 $categories = DB::table("categories")->get();
