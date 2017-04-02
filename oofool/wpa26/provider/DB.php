@@ -17,6 +17,7 @@ class DB extends PDO
         var_dump("DB Object Destroyed!");
     }
     private static $_instance;
+    
     public static function table(string $table_name)
     {
         if (!self::$_instance instanceof DB) {
