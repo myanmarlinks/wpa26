@@ -10,7 +10,7 @@ class HomeController {
 		$cat = Application::get("cat");
 		$cat->meow();
 		Application::remove("dog");
-		$dog = Application::get("dog");
+		// $dog = Application::get("dog");
 	}
 
 	public function __destruct() {

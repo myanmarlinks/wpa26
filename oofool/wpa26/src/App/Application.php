@@ -23,7 +23,7 @@ class Application {
 	static public function get($name)
 	{
 		if (!self::contains($name)) {
-			user_error("Object does not exist!", E_USER_ERROR);
+			throw new \Exception("Object does not exist");
 		}
 		return self::$_store[$name];
 	}
