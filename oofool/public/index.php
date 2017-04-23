@@ -4,6 +4,7 @@ define("DD", realpath( __DIR__ . "/.."));
 require DD . "/vendor/autoload.php";
 
 use Wpa26\App\Application;
+use Wpa26\App\LogFactory;
 
 class Dog {
 	public function __construct() {
@@ -33,8 +34,13 @@ class Cat {
 Application::add(new Dog());
 Application::add(new Cat());
 
+
 $home = new HomeController();
 
+$log = new LogFactory();
+
+$logFile = $log->getLog('file', ["test"]);
+$logFile->write("test", "Hello World!");
 
 
 
