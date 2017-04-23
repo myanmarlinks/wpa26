@@ -31,16 +31,22 @@ class Cat {
 	}
 }
 
-Application::add(new Dog());
-Application::add(new Cat());
+// Application::add(new Dog());
+// Application::add(new Cat());
 
 
-$home = new HomeController();
+// $home = new HomeController();
 
 $log = new LogFactory();
 
 $logFile = $log->getLog('file', ["test"]);
 $logFile->write("test", "Hello World!");
+$logMysql = $log->getLog("redis", ["test"]);
+$logMysql->write("mysql", "Hello Redis");
+$logFile = $log->getLog('file', ["test"]);
+$logFile->write("test", "Hello World!");
+$logMysql = $log->getLog("redis", ["test"]);
+$logMysql->write("mysql", "Hello Redis");
 
 
 

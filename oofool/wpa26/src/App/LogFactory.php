@@ -1,6 +1,7 @@
 <?php 
 
 namespace Wpa26\App;
+
 class LogFactory
 {
 	// File
