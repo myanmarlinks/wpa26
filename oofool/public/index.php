@@ -3,11 +3,37 @@
 define("DD", realpath( __DIR__ . "/.."));
 require DD . "/vendor/autoload.php";
 
-use Wpa26\App\Application as AppApp;
-use Wpa26\Core\Application as CoreApp;
+use Wpa26\App\Application;
 
-$app = new AppApp();
-$another = new CoreApp();
+class Dog {
+	public function __construct() {
+		echo "Dog Contructor! <br />";
+	}
+	public function bark() {
+		echo "Bark! <br />";
+	}
+	public function __destruct() {
+		echo "Dog Destruct! <br />";
+	}
+}
+
+class Cat {
+	public function __construct() {
+		echo "Cat Contructor! <br />";
+	}
+
+	public function meow() {
+		echo "Meow! <br />";
+	}
+	public function __destruct() {
+		echo "Cat Destruct! <br />";
+	}
+}
+
+Application::add(new Dog());
+Application::add(new Cat());
+
+$home = new HomeController();
 
 
 

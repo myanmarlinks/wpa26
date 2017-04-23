@@ -4,7 +4,8 @@
 			"Wpa26\\" : "wpa26/src/"
 		},
 		"classmap": [
-			"wpa26/provider"
+			"wpa26/provider",
+			"app/controller"
 		]
 	}
 }

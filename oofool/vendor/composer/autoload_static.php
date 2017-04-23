@@ -22,6 +22,7 @@ class ComposerStaticIniteeec569f944e919304d7c6f797a1ce86
 
     public static $classMap = array (
         'DB' => __DIR__ . '/../..' . '/wpa26/provider/DB.php',
+        'HomeController' => __DIR__ . '/../..' . '/app/controller/HomeController.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

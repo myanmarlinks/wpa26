@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'DB' => $baseDir . '/wpa26/provider/DB.php',
+    'HomeController' => $baseDir . '/app/controller/HomeController.php',
 );
