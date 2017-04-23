@@ -12,7 +12,7 @@ class Application {
 		$name = is_null($name) ? get_class($object) : $name;
 		$name = strtolower($name);
 		$return = null;
-		
+
 		if (isset(self::$_store[$name])) {
 			$return = self::$_store[$name];
 		}
@@ -23,7 +23,7 @@ class Application {
 	static public function get($name)
 	{
 		if (!self::contains($name)) {
-			throw new Exception("Object does not exist in registry");
+			user_error("Object does not exist!", E_USER_ERROR);
 		}
 		return self::$_store[$name];
 	}
