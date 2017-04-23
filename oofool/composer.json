@@ -1,5 +1,8 @@
 {
 	"autoload": {
+		"psr-4": {
+			"Wpa26\\" : "wpa26/src/"
+		},
 		"classmap": [
 			"wpa26/provider"
 		]

@@ -6,6 +6,20 @@ namespace Composer\Autoload;
 
 class ComposerStaticIniteeec569f944e919304d7c6f797a1ce86
 {
+    public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'Wpa26\\' => 6,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Wpa26\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/wpa26/src',
+        ),
+    );
+
     public static $classMap = array (
         'DB' => __DIR__ . '/../..' . '/wpa26/provider/DB.php',
     );
@@ -13,6 +27,8 @@ class ComposerStaticIniteeec569f944e919304d7c6f797a1ce86
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticIniteeec569f944e919304d7c6f797a1ce86::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticIniteeec569f944e919304d7c6f797a1ce86::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticIniteeec569f944e919304d7c6f797a1ce86::$classMap;
 
         }, null, ClassLoader::class);
